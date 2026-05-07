@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0c0a09;
+  color: #f5f5f4;
+}
+
+.font-display {
+  font-family: 'Outfit', system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 20 14% 4%;
+    --foreground: 20 6% 90%;
+    --primary: 38 92% 50%;
+    --primary-foreground: 20 14% 4%;
+    --border: 20 6% 15%;
+    --input: 20 6% 15%;
+    --ring: 38 92% 50%;
+    --radius: 1rem;
+  }
+}
+
+/* Pulse glow for active alarm/motion */
+@keyframes amber-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.45); }
+  50% { box-shadow: 0 0 30px 8px rgba(245, 158, 11, 0.25); }
+}
+.amber-pulse {
+  animation: amber-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes soft-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.soft-blink {
+  animation: soft-blink 1.4s ease-in-out infinite;
+}
